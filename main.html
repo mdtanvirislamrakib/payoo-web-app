@@ -51,37 +51,37 @@
             <div class="cards grid grid-cols-3 gap-2 mb-8">
 
                 <div
-                    class="box p-5 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="add-money">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="add-money">
                     <img src="./assets/wallet1.png" alt="" class="max-w-8 mx-auto">
-                    <h3 class="text-sm text-center text-gray-600">Add Money</h3>
+                    <h3 class="text-lg text-center text-gray-600">Add Money</h3>
                 </div>
 
                 <div
-                    class="box p-5 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="cashout">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="cashout">
                     <img src="./assets/send1.png" alt="" class="max-w-8 mx-auto">
                     <h3 class="text-center text-lg text-gray-600">Cashout</h3>
                 </div>
 
                 <div
-                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="send-money">
                     <img src="./assets/money1.png" alt="" class="max-w-8 mx-auto">
-                    <h3 class="text-center text-sm text-gray-600">Transfer Money</h3>
+                    <h3 class="text-center text-lg text-gray-600">Send Money</h3>
                 </div>
 
                 <div
-                    class="box p-5 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
                     <img src="./assets/bonus1.png" alt="" class="max-w-8 mx-auto">
                     <h3 class="text-center text-lg text-gray-600">Get Bonus</h3>
                 </div>
 
                 <div
-                    class="box p-5 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
                     <img src="./assets/purse1.png" alt="" class="max-w-8 mx-auto">
                     <h3 class="text-center text-lg text-gray-600">Pay Bill</h3>
                 </div>
 
                 <div
-                    class="box p-5 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
                     <img src="./assets/transaction1.png" alt="" class="max-w-8 mx-auto">
                     <h3 class="text-center text-lg text-gray-600">Transactions</h3>
                 </div>
@@ -231,6 +231,43 @@
             </div>
 
         </section>
+
+
+
+        <!-- send money section  -->
+        <section class="mt-8 px-5 space-y-4" id="send-money-section">
+            <h1 class="text-2xl font-bold">Transfer Money</h1>
+
+            <div class="mx-auto rounded-2xl pb-5">
+                <div class=" flex-col lg:flex-row-reverse">
+                  <div class="text-center lg:text-left">
+                  <div class="card bg-base-100">
+                    <div class="card-body">
+                      <fieldset class="fieldset">
+                        <label class="text-lg font-bold text-slate-900">Personal Number</label>
+                        <input type="number" id="personal-number"
+                                class="outline-none px-4 py-3 border-gray-200 rounded-3xl bg-gray-200 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-appearance:textfield"
+                                placeholder="Enter 11 digit account number" required/>
+                        <label class="text-lg font-bold text-slate-900">Amount to Send Money</label>
+                        <input type="number" id="send-amount"
+                                class="outline-none px-4 py-3 border-gray-200 rounded-3xl bg-gray-200 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-appearance:textfield" 
+                                placeholder="Add Amount to send" required/>
+                        <label class="text-lg font-bold text-slate-900">Pin Number</label>
+                        <input type="password" id="send-money-pin-number"
+                                class="outline-none px-4 py-3 border-gray-200 rounded-3xl bg-gray-200"
+                                placeholder="Enter 4 digit Pin Number" required minlength="4" maxlength="4"/>
+                                <button
+                                class="bg-sky-600 outline-none px-4 py-3 rounded-3xl text-white font-bold text-lg mt-4 cursor-pointer hover:bg-sky-800 transition-all" id="send-money-money-btn">Send Money</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Bonus section -->
     </section>
 
     <script src="./js/logout.js"></script>

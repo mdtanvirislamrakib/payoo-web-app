@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo Mobile Banking App</title>
+    <link rel="shortcut icon" href="assets/payoo.png" type="image/x-icon">
+
+    <!-- fontawesome setup -->
+    <script src="https://kit.fontawesome.com/19e4e4bd63.js" crossorigin="anonymous"></script>
+    <!-- font awesome setup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <!-- css setup -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-800 font-outfit">
+    <!-- login section  start-->
+
+    <section class="max-w-md  min-h-screen mx-auto py-6 bg-gray-200" >
+        <header>
+            <nav class="flex justify-center items-center mt-14">
+                <div class="flex justify-center items-center mt-10 relative w-9/12 mb-10">
+                    <img src="./assets/bg.png" alt="" class="max-w-64 absolute mt-32">
+                    <img src="./assets/Group.png" alt="" class="w-16">
+                </div>
+            </nav>
+
+            <div class="w-11/12 mx-auto flex justify-center items-center">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-2xl">
+                    <form class="card-body">
+                        <fieldset class="fieldset">
+                            <label class="fieldset-label font-bold text-sm text-slate-800 font-outfit">Phone
+                                Number</label>
+                            <input type="number" id="account-number"
+                                class="outline-none px-4 py-3 border-gray-200 rounded-3xl bg-gray-200 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-appearance:textfield"
+                                placeholder="Enter Your Number" required/>
+                            <label class="fieldset-label font-bold text-sm text-slate-800">pin Number</label>
+                            <input type="password" id="pin-number"
+                                class="outline-none px-4 py-3 border-gray-200 rounded-3xl bg-gray-200"
+                                placeholder="Enter 4 digit Pin" required minlength="4" maxlength="4"/>
+                            <div><a class="link link-hover text-sky-900 font-bold">Forgot pin?</a></div>
+                            <button
+                                class="bg-sky-600 outline-none px-4 py-3 rounded-3xl text-white font-bold text-lg mt-4 cursor-pointer hover:bg-sky-800 transition-all" id="login-btn">Login</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </header>
+    </section>
+
+    <!-- login section  end-->
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

@@ -3,6 +3,7 @@
 document.getElementById('add-money-section').style.display = 'none';
 document.getElementById('cashout-section').style.display = 'none';
 document.getElementById('send-money-section').style.display = 'none';
+document.getElementById('bonus-section').style.display = 'none';
 
 
 const addMoney = document.getElementById('add-money');
@@ -15,6 +16,8 @@ addMoney.addEventListener('click', function (event) {
     document.getElementById('add-money').classList.add('active');
     document.getElementById('cashout').classList.remove('active');
     document.getElementById('send-money').classList.remove('active');
+    document.getElementById('bonus-section').style.display = 'none';
+    document.getElementById('get-bonus').classList.remove('active');
 })
 
 document.getElementById('cashout').addEventListener('click', function (event) {
@@ -26,6 +29,8 @@ document.getElementById('cashout').addEventListener('click', function (event) {
     document.getElementById('add-money').classList.remove('active');
     document.getElementById('cashout').classList.add('active');
     document.getElementById('send-money').classList.remove('active');
+    document.getElementById('bonus-section').style.display = 'none';
+    document.getElementById('get-bonus').classList.remove('active');
 });
 
 
@@ -38,7 +43,27 @@ document.getElementById('send-money').addEventListener('click', function (event)
     document.getElementById('add-money').classList.remove('active');
     document.getElementById('cashout').classList.remove('active');
     document.getElementById('send-money').classList.add('active');
+    document.getElementById('bonus-section').style.display = 'none';
+    document.getElementById('get-bonus').classList.remove('active');
 });
+
+
+document.getElementById('get-bonus').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('latest-payment-section').style.display = 'none';
+    document.getElementById('add-money-section').style.display = 'none';
+    document.getElementById('cashout-section').style.display = 'none';
+    document.getElementById('send-money-section').style.display = 'none';
+    document.getElementById('bonus-section').style.display = 'block';
+    document.getElementById('add-money').classList.remove('active');
+    document.getElementById('cashout').classList.remove('active');
+    document.getElementById('send-money').classList.remove('active');
+    document.getElementById('get-bonus').classList.add('active');
+});
+
+
+
+
 
 
 
@@ -120,17 +145,11 @@ document.getElementById('cashout-money-btn').addEventListener('click', function 
 });
 
 
-
-
 // send money section
 document.getElementById('send-money-money-btn').addEventListener('click', function (event) {
     event.preventDefault();
-    // const aggentNumber = document.getElementById('aggent-number').value;
     const personalNumber = document.getElementById('personal-number').value;
-    // const pinNumber = document.getElementById('cashout-pin-number').value;
     const sendMoneyPinNumber = document.getElementById('send-money-pin-number').value;
-
-    // const cashoutAmount = document.getElementById('cashout-amount').value;
     const sendMoneyAmmount = document.getElementById('send-amount').value;
     const convertSendAmount = parseFloat(sendMoneyAmmount);
 
@@ -168,4 +187,32 @@ document.getElementById('send-money-money-btn').addEventListener('click', functi
         }
     }
 
+});
+
+
+// Bonus section 
+document.getElementById('bonus-btn').addEventListener('click', function (event) {
+    event.preventDefault();
+    
+    const cuponCode = "de sala 10taka"
+    console.log("cupon code is:", cuponCode);
+
+    const ballance = document.getElementById('bdt');
+
+    
+    
+
+    const cuponcode = document.getElementById('cupon-code').value;
+    
+
+    if (typeof cuponcode !== 'string' || cuponCode === "") {
+        alert("Invalid Cupon Code");
+    } else {
+        if (cuponCode !== cuponCode) {
+            alert("Wrong Cupon Code")
+        } else {
+            const totalAmmount = parseInt(ballance.innerText) + 10;
+            ballance.innerText = totalAmmount;
+        }
+    }
 });

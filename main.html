@@ -69,7 +69,7 @@
                 </div>
 
                 <div
-                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="get-bonus">
                     <img src="./assets/bonus1.png" alt="" class="max-w-8 mx-auto">
                     <h3 class="text-center text-lg text-gray-600">Get Bonus</h3>
                 </div>
@@ -268,6 +268,35 @@
 
 
         <!-- Bonus section -->
+        <section class="mt-8 px-5 space-y-4" id="bonus-section">
+            <h1 class="text-2xl font-bold">Get Bonus</h1>
+
+            <div class="mx-auto rounded-2xl pb-5">
+                <div class=" flex-col lg:flex-row-reverse">
+                  <div class="text-center lg:text-left">
+                  <div class="card bg-base-100">
+                    <div class="card-body">
+                      <fieldset class="fieldset">
+                        <label class="text-lg font-bold text-slate-900">Amount to Send Money</label>
+                        <input type="text" id="cupon-code"
+                                class="outline-none px-4 py-3 border-gray-200 rounded-3xl bg-gray-200" 
+                                placeholder="Add Amount to send" required/>
+                                <button
+                                class="bg-sky-600 outline-none px-4 py-3 rounded-3xl text-white font-bold text-lg mt-4 cursor-pointer hover:bg-sky-800 transition-all" id="bonus-btn">Send Money</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
     </section>
 
     <script src="./js/logout.js"></script>

@@ -1,5 +1,5 @@
 
-
+/*
 document.getElementById('add-money-section').style.display = 'none';
 document.getElementById('cashout-section').style.display = 'none';
 document.getElementById('send-money-section').style.display = 'none';
@@ -234,6 +234,7 @@ document.getElementById('bonus-btn').addEventListener('click', function (event) 
         if (cuponCode !== cuponCode) {
             alert("Wrong Cupon Code")
         } else {
+            alert("You get 10tk bonus");
             const totalAmmount = parseInt(ballance.innerText) + 10;
             ballance.innerText = totalAmmount;
         }
@@ -276,3 +277,6 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
     }
 
 });
+
+
+*/

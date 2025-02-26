@@ -4,8 +4,9 @@ document.getElementById('cashout-section').style.display = 'none';
 document.getElementById('send-money-section').style.display = 'none';
 document.getElementById('bonus-section').style.display = 'none';
 document.getElementById('pay-bill-section').style.display = 'none';
+document.getElementById('transaction-section').style.display = 'none';
 
-
+// add money 
 const addMoney = document.getElementById('add-money');
 addMoney.addEventListener('click', function (event) {
     event.preventDefault();
@@ -14,14 +15,17 @@ addMoney.addEventListener('click', function (event) {
     document.getElementById('cashout-section').style.display = 'none';
     document.getElementById('send-money-section').style.display = 'none';
     document.getElementById('pay-bill-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
     document.getElementById('add-money').classList.add('active');
     document.getElementById('cashout').classList.remove('active');
     document.getElementById('send-money').classList.remove('active');
     document.getElementById('bonus-section').style.display = 'none';
     document.getElementById('get-bonus').classList.remove('active');
     document.getElementById('pay-bill').classList.remove('active');
+    document.getElementById('trasaction').classList.remove('active');
 })
 
+// cashout money 
 document.getElementById('cashout').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('latest-payment-section').style.display = 'none';
@@ -29,15 +33,17 @@ document.getElementById('cashout').addEventListener('click', function (event) {
     document.getElementById('send-money-section').style.display = 'none';
     document.getElementById('cashout-section').style.display = 'block';
     document.getElementById('pay-bill-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
     document.getElementById('add-money').classList.remove('active');
     document.getElementById('cashout').classList.add('active');
     document.getElementById('send-money').classList.remove('active');
     document.getElementById('bonus-section').style.display = 'none';
     document.getElementById('get-bonus').classList.remove('active');
     document.getElementById('pay-bill').classList.remove('active');
+    document.getElementById('trasaction').classList.remove('active');
 });
 
-
+// send money 
 document.getElementById('send-money').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('latest-payment-section').style.display = 'none';
@@ -45,15 +51,17 @@ document.getElementById('send-money').addEventListener('click', function (event)
     document.getElementById('cashout-section').style.display = 'none';
     document.getElementById('send-money-section').style.display = 'block';
     document.getElementById('pay-bill-section').style.display = 'none';
+    document.getElementById('transaction-section').style.display = 'none';
     document.getElementById('add-money').classList.remove('active');
     document.getElementById('cashout').classList.remove('active');
     document.getElementById('send-money').classList.add('active');
     document.getElementById('bonus-section').style.display = 'none';
     document.getElementById('get-bonus').classList.remove('active');
     document.getElementById('pay-bill').classList.remove('active');
+    document.getElementById('trasaction').classList.remove('active');
 });
 
-
+// get bonus
 document.getElementById('get-bonus').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('latest-payment-section').style.display = 'none';
@@ -62,15 +70,16 @@ document.getElementById('get-bonus').addEventListener('click', function (event) 
     document.getElementById('send-money-section').style.display = 'none';
     document.getElementById('pay-bill-section').style.display = 'none';
     document.getElementById('bonus-section').style.display = 'block';
+    document.getElementById('transaction-section').style.display = 'none';
     document.getElementById('add-money').classList.remove('active');
     document.getElementById('cashout').classList.remove('active');
     document.getElementById('send-money').classList.remove('active');
     document.getElementById('get-bonus').classList.add('active');
     document.getElementById('pay-bill').classList.remove('active');
+    document.getElementById('trasaction').classList.remove('active');
 });
 
-
-
+// pay bill 
 document.getElementById('pay-bill').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('latest-payment-section').style.display = 'none';
@@ -79,16 +88,32 @@ document.getElementById('pay-bill').addEventListener('click', function (event) {
     document.getElementById('send-money-section').style.display = 'none';
     document.getElementById('bonus-section').style.display = 'none';
     document.getElementById('pay-bill-section').style.display = 'block';
+    document.getElementById('transaction-section').style.display = 'none';
     document.getElementById('add-money').classList.remove('active');
     document.getElementById('cashout').classList.remove('active');
     document.getElementById('send-money').classList.remove('active');
     document.getElementById('get-bonus').classList.remove('active');
     document.getElementById('pay-bill').classList.add('active');
+    document.getElementById('trasaction').classList.remove('active');
 });
 
-
-
-
+// transaction
+document.getElementById('trasaction').addEventListener('click', function (event) {
+    event.preventDefault();
+    document.getElementById('latest-payment-section').style.display = 'none';
+    document.getElementById('add-money-section').style.display = 'none';
+    document.getElementById('cashout-section').style.display = 'none';
+    document.getElementById('send-money-section').style.display = 'none';
+    document.getElementById('bonus-section').style.display = 'none';
+    document.getElementById('pay-bill-section').style.display = 'none';
+    document.getElementById('add-money').classList.remove('active');
+    document.getElementById('cashout').classList.remove('active');
+    document.getElementById('send-money').classList.remove('active');
+    document.getElementById('get-bonus').classList.remove('active');
+    document.getElementById('pay-bill').classList.remove('active');
+    document.getElementById('trasaction').classList.add('active');
+    document.getElementById('transaction-section').style.display = 'block';
+});
 
 // add money section 
 document.getElementById('add-money-btn').addEventListener('click', function (event) {
@@ -98,11 +123,13 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
     const amount = document.getElementById('amount').value;
     const balance = document.getElementById('bdt');
     const totalBallance = parseInt(balance.innerText) + parseFloat(amount);
+    const selectBank = document.getElementById("select").value;
+    console.log(selectBank);
 
     if (accountNumber === '' || pinNumber === '' || amount === '') {
         alert('Please fill in all fields');
     } else {
-        if (typeof parseInt(accountNumber) !== 'number' || accountNumber.length !== 11) {
+        if (typeof parseInt(accountNumber) !== 'number' || accountNumber.length !== 11 || parseInt(amount) <= 0) {
             alert('Invalid account number');
         } else {
             if (typeof parseInt(amount) !== 'number') {
@@ -113,6 +140,30 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
                 } else {
                     balance.innerText = totalBallance;
                     alert("money added successfully");
+
+                    const container = document.getElementById("transaction-section");
+
+                    const div = document.createElement("div");
+
+                    div.innerHTML = `
+                        <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
+                            <div class="flex justify-between items-center">
+                                <img src="./assets/wallet1.png" alt="" class="bg-gray-200 rounded-full w-12 p-1">
+                                <div class="flex flex-col ml-5">
+                                    
+                                    <h4 class="text-lg font-bold">Added Money</h4>
+                                    <h1 class="font-bold text-xl">Bank Name: <span class="text-lg font-semiboldbold text-sky-600">${selectBank}</span> </h1>
+                                    <p class="text-sm text-gray-500">${amount} &#2547</p>
+                                    <p class="text-sm text-gray-500">Account Number: ${accountNumber}</p>
+                                </div>
+
+                            </div>
+                            <div class="cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    `
+                    container.appendChild(div);
                 }
             }
 
@@ -120,7 +171,6 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
     }
 
 });
-
 
 // cashout section 
 
@@ -156,6 +206,26 @@ document.getElementById('cashout-money-btn').addEventListener('click', function 
                     } else {
                         balance.innerText = totalBallance;
                         alert("Cashout successfully");
+                        const container = document.getElementById("transaction-section");
+                        const div = document.createElement("div");
+
+                        div.innerHTML = `
+                        <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
+                        <div class="flex justify-between items-center">
+                                <img src="./assets/send1.png" alt="" class="bg-gray-200 rounded-full w-12 p-1">
+                                <div class="flex flex-col ml-5">
+                                    <h4 class="text-lg font-bold">Cashout Money</h4>
+                                    <p class="text-sm text-gray-500">${cashoutAmount} &#2547</p>
+                                    <p class="text-sm text-gray-500">Aggent Number: ${aggentNumber}</p>
+                                </div>
+
+                            </div>
+                            <div class="cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    `
+                        container.appendChild(div);
                     }
 
                 }
@@ -165,7 +235,6 @@ document.getElementById('cashout-money-btn').addEventListener('click', function 
     }
 
 });
-
 
 // send money section
 document.getElementById('send-money-money-btn').addEventListener('click', function (event) {
@@ -177,7 +246,7 @@ document.getElementById('send-money-money-btn').addEventListener('click', functi
 
     const balance = document.getElementById('bdt');
 
-    const sendMoneycharge =  5;
+    const sendMoneycharge = 5;
     const totalSendMoney = convertSendAmount + sendMoneycharge;
     const totalBallance = parseInt(balance.innerText) - totalSendMoney;
 
@@ -201,6 +270,26 @@ document.getElementById('send-money-money-btn').addEventListener('click', functi
                     } else {
                         balance.innerText = totalBallance;
                         alert("Send Money successfully");
+                        const container = document.getElementById("transaction-section");
+                        const div = document.createElement("div");
+
+                        div.innerHTML = `
+                        <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
+                        <div class="flex justify-between items-center">
+                                <img src="./assets/money1.png" alt="" class="bg-gray-200 rounded-full w-12 p-1">
+                                <div class="flex flex-col ml-5">
+                                    <h4 class="text-lg font-bold">Send Money</h4>
+                                    <p class="text-sm text-gray-500">${sendMoneyAmmount} &#2547</p>
+                                    <p class="text-sm text-gray-500">Personal Number: ${personalNumber}</p>
+                                </div>
+
+                            </div>
+                            <div class="cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                    `
+                        container.appendChild(div);
                     }
 
                 }
@@ -211,21 +300,20 @@ document.getElementById('send-money-money-btn').addEventListener('click', functi
 
 });
 
-
 // Bonus section 
 document.getElementById('bonus-btn').addEventListener('click', function (event) {
     event.preventDefault();
-    
+
     const cuponCode = "de sala 10taka"
     console.log("cupon code is:", cuponCode);
 
     const ballance = document.getElementById('bdt');
 
-    
-    
+
+
 
     const cuponcode = document.getElementById('cupon-code').value;
-    
+
 
     if (typeof cuponcode !== 'string' || cuponCode === "") {
         alert("Invalid Cupon Code");
@@ -234,14 +322,33 @@ document.getElementById('bonus-btn').addEventListener('click', function (event) 
             alert("Wrong Cupon Code")
         } else {
             alert("You get 10tk bonus");
-            const totalAmmount = parseInt(ballance.innerText) + 10;
+            const bonusAmmount = 10;
+            const totalAmmount = parseInt(ballance.innerText) + bonusAmmount;
             ballance.innerText = totalAmmount;
+
+            const container = document.getElementById("transaction-section");
+            const div = document.createElement("div");
+
+            div.innerHTML = `
+                <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
+                    <div class="flex justify-between items-center">
+                        <img src="./assets/bonus1.png" alt="" class="bg-gray-200 rounded-full w-12 p-1">
+                        <div class="flex flex-col ml-5">
+                            <h4 class="text-lg font-bold">Bonus Money</h4>
+                            <p class="text-sm text-gray-500">${bonusAmmount} &#2547</p>
+                            <p class="text-sm text-gray-500">Cupon Code: ${cuponcode}</p>
+                        </div>
+
+                    </div>
+                    <div class="cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            `
+            container.appendChild(div);
         }
     }
 });
-
-
-
 
 // paybill section
 document.getElementById('pay-bill-btn').addEventListener('click', function (event) {
@@ -254,6 +361,7 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
     const PayAmount = document.getElementById('pay-amount').value;
     const balance = document.getElementById('bdt');
     const totalBallance = parseInt(balance.innerText) - parseFloat(PayAmount);
+    const payBillType = document.getElementById("bill-type").value;
 
     if (payBillNumber === '' || payPinNumber === '' || amount === '') {
         alert('Please fill in all fields');
@@ -269,6 +377,29 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
                 } else {
                     balance.innerText = totalBallance;
                     alert("Pay Bill successfully");
+                    const container = document.getElementById("transaction-section");
+
+                    const div = document.createElement("div");
+
+                    div.innerHTML = `
+                <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
+                    <div class="flex justify-between items-center">
+                        <img src="./assets/purse1.png" alt="" class="bg-gray-200 rounded-full w-12 p-1">
+                        <div class="flex flex-col ml-5">
+                            <h4 class="text-lg font-bold">Pay Bill</h4>
+                            <h1 class="font-bold text-xl">Bill Type: <span class="text-lg font-semiboldbold text-sky-600">${payBillType}</span> </h1>
+                            <p class="text-sm text-gray-500">You pay: ${PayAmount} &#2547</p>
+                            <p class="text-sm text-gray-500">Bill NO: ${payBillNumber}</p>
+                        </div>
+
+                    </div>
+                    <div class="cursor-pointer">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
+            `
+                    container.appendChild(div);
+
                 }
             }
 
@@ -276,5 +407,3 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
     }
 
 });
-
-

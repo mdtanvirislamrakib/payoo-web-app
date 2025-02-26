@@ -81,7 +81,7 @@
                 </div>
 
                 <div
-                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300">
+                    class="box p-2 border-2 border-gray-300 rounded-xl flex flex-col items-center justify-center space-y-3 cursor-pointer hover:bg-sky-100 transition-all hover:border-sky-300" id="trasaction">
                     <img src="./assets/transaction1.png" alt="" class="max-w-8 mx-auto">
                     <h3 class="text-center text-lg text-gray-600">Transactions</h3>
                 </div>
@@ -168,13 +168,13 @@
                   <div class="card bg-base-100">
                     <div class="card-body">
                         <label class="text-lg font-bold text-slate-900">Select A Bank</label>
-                        <select class="px-5 py-3 outline-none bg-gray-200 border-none text-sm font-bold text-gray-500 cursor-pointer rounded-3xl">
+                        <select class="px-5 py-3 outline-none bg-gray-200 border-none text-sm font-bold text-gray-500 cursor-pointer rounded-3xl" id="select">
                             <option disabled selected>Select A Bank</option>
-                            <option>Islami Bank</option>
-                            <option>Datch Bangla</option>
-                            <option>IFIC</option>
-                            <option>UCB</option>
-                            <option>Asia Bank</option>
+                            <option value="Islami Bank">Islami Bank</option>
+                            <option value="DBBL">Datch Bangla</option>
+                            <option value="IFIC">IFIC</option>
+                            <option value="UCB">UCB</option>
+                            <option value="Asia Bank">Asia Bank</option>
                         </select>
                       <fieldset class="fieldset">
                         <label class="text-lg font-bold text-slate-900">Bank Account Number</label>
@@ -302,13 +302,13 @@
                   <div class="card bg-base-100">
                     <div class="card-body">
                         <label class="text-lg font-bold text-slate-900">Select A Bank</label>
-                        <select class="px-5 py-3 outline-none bg-gray-200 border-none text-sm font-bold text-gray-500 cursor-pointer rounded-3xl">
+                        <select class="px-5 py-3 outline-none bg-gray-200 border-none text-sm font-bold text-gray-500 cursor-pointer rounded-3xl" id="bill-type">
                             <option disabled selected>Select To Pay</option>
-                            <option>Gas Bill</option>
-                            <option>Current Bill</option>
-                            <option>Internet Bill</option>
-                            <option>Water Bill</option>
-                            <option>Education Fees</option>
+                            <option value="Gas Bill">Gas Bill</option>
+                            <option value="Current Bill">Current Bill</option>
+                            <option value="Internet Bill">Internet Bill</option>
+                            <option value="Water Bill">Water Bill</option>
+                            <option value="Education Fees">Education Fees</option>
                         </select>
                       <fieldset class="fieldset">
                         <label class="text-lg font-bold text-slate-900">Biller Account Number</label>
@@ -334,7 +334,14 @@
         </section>
 
 
-
+        <!-- transaction history -->
+        <section class="p-5" id="transaction-section">
+            <div class="flex justify-between items-center mb-5">
+                <h2 class="text-xl font-bold">Transactions History</h2>
+                <p class="text-sm text-gray-600 cursor-pointer">View All</p>
+            </div>
+        
+        </section>
         
 
     </section>

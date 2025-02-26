@@ -1,5 +1,4 @@
 
-/*
 document.getElementById('add-money-section').style.display = 'none';
 document.getElementById('cashout-section').style.display = 'none';
 document.getElementById('send-money-section').style.display = 'none';
@@ -279,4 +278,3 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
 });
 
 
-*/

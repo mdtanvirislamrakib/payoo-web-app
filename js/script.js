@@ -145,6 +145,9 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
 
                     const div = document.createElement("div");
 
+                    const now = new Date();
+                    const formattedDateTime = now.toLocaleString();
+
                     div.innerHTML = `
                         <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
                             <div class="flex justify-between items-center">
@@ -155,6 +158,7 @@ document.getElementById('add-money-btn').addEventListener('click', function (eve
                                     <h1 class="font-bold text-xl">Bank Name: <span class="text-lg font-semiboldbold text-sky-600">${selectBank}</span> </h1>
                                     <p class="text-sm text-gray-500">${amount} &#2547</p>
                                     <p class="text-sm text-gray-500">Account Number: ${accountNumber}</p>
+                                    <p class="text-sm text-gray-500 font-semibold">Date & Time: ${formattedDateTime}</p> 
                                 </div>
 
                             </div>
@@ -208,6 +212,8 @@ document.getElementById('cashout-money-btn').addEventListener('click', function 
                         alert("Cashout successfully");
                         const container = document.getElementById("transaction-section");
                         const div = document.createElement("div");
+                        const now = new Date();
+                        const formattedDateTime = now.toLocaleString();
 
                         div.innerHTML = `
                         <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
@@ -217,6 +223,7 @@ document.getElementById('cashout-money-btn').addEventListener('click', function 
                                     <h4 class="text-lg font-bold">Cashout Money</h4>
                                     <p class="text-sm text-gray-500">${cashoutAmount} &#2547</p>
                                     <p class="text-sm text-gray-500">Aggent Number: ${aggentNumber}</p>
+                                    <p class="text-sm text-gray-500 font-semibold">Date & Time: ${formattedDateTime}</p> 
                                 </div>
 
                             </div>
@@ -272,6 +279,8 @@ document.getElementById('send-money-money-btn').addEventListener('click', functi
                         alert("Send Money successfully");
                         const container = document.getElementById("transaction-section");
                         const div = document.createElement("div");
+                        const now = new Date();
+                        const formattedDateTime = now.toLocaleString();
 
                         div.innerHTML = `
                         <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
@@ -281,6 +290,7 @@ document.getElementById('send-money-money-btn').addEventListener('click', functi
                                     <h4 class="text-lg font-bold">Send Money</h4>
                                     <p class="text-sm text-gray-500">${sendMoneyAmmount} &#2547</p>
                                     <p class="text-sm text-gray-500">Personal Number: ${personalNumber}</p>
+                                    <p class="text-sm text-gray-500 font-semibold">Date & Time: ${formattedDateTime}</p> 
                                 </div>
 
                             </div>
@@ -328,6 +338,8 @@ document.getElementById('bonus-btn').addEventListener('click', function (event) 
 
             const container = document.getElementById("transaction-section");
             const div = document.createElement("div");
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString();
 
             div.innerHTML = `
                 <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
@@ -337,6 +349,7 @@ document.getElementById('bonus-btn').addEventListener('click', function (event) 
                             <h4 class="text-lg font-bold">Bonus Money</h4>
                             <p class="text-sm text-gray-500">${bonusAmmount} &#2547</p>
                             <p class="text-sm text-gray-500">Cupon Code: ${cuponcode}</p>
+                            <p class="text-sm text-gray-500 font-semibold">Date & Time: ${formattedDateTime}</p> 
                         </div>
 
                     </div>
@@ -381,6 +394,9 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
 
                     const div = document.createElement("div");
 
+                    const now = new Date();
+                    const formattedDateTime = now.toLocaleString();
+
                     div.innerHTML = `
                 <div class="bg-white px-5 py-3 rounded-lg flex justify-between items-center hover:shadow-lg transition-all mb-5">
                     <div class="flex justify-between items-center">
@@ -390,6 +406,7 @@ document.getElementById('pay-bill-btn').addEventListener('click', function (even
                             <h1 class="font-bold text-xl">Bill Type: <span class="text-lg font-semiboldbold text-sky-600">${payBillType}</span> </h1>
                             <p class="text-sm text-gray-500">You pay: ${PayAmount} &#2547</p>
                             <p class="text-sm text-gray-500">Bill NO: ${payBillNumber}</p>
+                            <p class="text-sm text-gray-500 font-semibold">Date & Time: ${formattedDateTime}</p> 
                         </div>
 
                     </div>

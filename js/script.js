@@ -16,13 +16,7 @@ addMoney.addEventListener('click', function (event) {
     document.getElementById('send-money-section').style.display = 'none';
     document.getElementById('pay-bill-section').style.display = 'none';
     document.getElementById('transaction-section').style.display = 'none';
-    document.getElementById('add-money').classList.add('active');
-    document.getElementById('cashout').classList.remove('active');
-    document.getElementById('send-money').classList.remove('active');
     document.getElementById('bonus-section').style.display = 'none';
-    document.getElementById('get-bonus').classList.remove('active');
-    document.getElementById('pay-bill').classList.remove('active');
-    document.getElementById('trasaction').classList.remove('active');
 })
 
 // cashout money 
@@ -34,13 +28,7 @@ document.getElementById('cashout').addEventListener('click', function (event) {
     document.getElementById('cashout-section').style.display = 'block';
     document.getElementById('pay-bill-section').style.display = 'none';
     document.getElementById('transaction-section').style.display = 'none';
-    document.getElementById('add-money').classList.remove('active');
-    document.getElementById('cashout').classList.add('active');
-    document.getElementById('send-money').classList.remove('active');
     document.getElementById('bonus-section').style.display = 'none';
-    document.getElementById('get-bonus').classList.remove('active');
-    document.getElementById('pay-bill').classList.remove('active');
-    document.getElementById('trasaction').classList.remove('active');
 });
 
 // send money 
@@ -52,13 +40,7 @@ document.getElementById('send-money').addEventListener('click', function (event)
     document.getElementById('send-money-section').style.display = 'block';
     document.getElementById('pay-bill-section').style.display = 'none';
     document.getElementById('transaction-section').style.display = 'none';
-    document.getElementById('add-money').classList.remove('active');
-    document.getElementById('cashout').classList.remove('active');
-    document.getElementById('send-money').classList.add('active');
     document.getElementById('bonus-section').style.display = 'none';
-    document.getElementById('get-bonus').classList.remove('active');
-    document.getElementById('pay-bill').classList.remove('active');
-    document.getElementById('trasaction').classList.remove('active');
 });
 
 // get bonus
@@ -71,12 +53,6 @@ document.getElementById('get-bonus').addEventListener('click', function (event) 
     document.getElementById('pay-bill-section').style.display = 'none';
     document.getElementById('bonus-section').style.display = 'block';
     document.getElementById('transaction-section').style.display = 'none';
-    document.getElementById('add-money').classList.remove('active');
-    document.getElementById('cashout').classList.remove('active');
-    document.getElementById('send-money').classList.remove('active');
-    document.getElementById('get-bonus').classList.add('active');
-    document.getElementById('pay-bill').classList.remove('active');
-    document.getElementById('trasaction').classList.remove('active');
 });
 
 // pay bill 
@@ -89,12 +65,6 @@ document.getElementById('pay-bill').addEventListener('click', function (event) {
     document.getElementById('bonus-section').style.display = 'none';
     document.getElementById('pay-bill-section').style.display = 'block';
     document.getElementById('transaction-section').style.display = 'none';
-    document.getElementById('add-money').classList.remove('active');
-    document.getElementById('cashout').classList.remove('active');
-    document.getElementById('send-money').classList.remove('active');
-    document.getElementById('get-bonus').classList.remove('active');
-    document.getElementById('pay-bill').classList.add('active');
-    document.getElementById('trasaction').classList.remove('active');
 });
 
 // transaction
@@ -106,14 +76,19 @@ document.getElementById('trasaction').addEventListener('click', function (event)
     document.getElementById('send-money-section').style.display = 'none';
     document.getElementById('bonus-section').style.display = 'none';
     document.getElementById('pay-bill-section').style.display = 'none';
-    document.getElementById('add-money').classList.remove('active');
-    document.getElementById('cashout').classList.remove('active');
-    document.getElementById('send-money').classList.remove('active');
-    document.getElementById('get-bonus').classList.remove('active');
-    document.getElementById('pay-bill').classList.remove('active');
-    document.getElementById('trasaction').classList.add('active');
     document.getElementById('transaction-section').style.display = 'block';
 });
+
+
+const selectOption = document.querySelectorAll(".select-option");
+for(let i = 0; i < selectOption.length; i++){
+    selectOption[i].addEventListener("click", function(){
+        for(let j = 0; j < selectOption.length; j++){
+            selectOption[j].classList.remove("active");
+        }
+        selectOption[i].classList.add("active");
+    });
+}
 
 // add money section 
 document.getElementById('add-money-btn').addEventListener('click', function (event) {
